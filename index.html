@@ -5,25 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stream Camera</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+
+<div class="vd">
     <video id="strcamera" autoplay playsinline>
 
     </video>
+</div>
 
-    <script>
-        const strcamera = document.getElementById('strcamera');
 
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(stream => {
-                strcamera.srcObject = stream;
-            }
-            )
-            .catch(error => {
-                console.error('Error accessing camera', error);
-            });
-    </script>
+<script>
+    const strcamera = document.getElementById('strcamera');
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+            strcamera.srcObject = stream;
+        }
+        )
+        .catch(error => {
+            console.error('Error accessing camera', error);
+        });
+</script>
 </body>
 
 </html>
